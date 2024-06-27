@@ -174,10 +174,10 @@
       let title, body, tags;
       if (availableSlots.length > 0) {
         title = "SLOT FOUND NO FUCKING WAY";
-        body = `GO GET IT MY NIGGA: ${availableSlots.join(", ")}`;
+        body = `GO GET IT: ${availableSlots.join(", ")}`;
         tags = "flushed";
       } else {
-        title = "no slots found lil nigga";
+        title = "no slots found";
         body = "WOMP WOMp";
         tags = "middle_finger";
       }
