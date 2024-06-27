@@ -20,7 +20,7 @@
   const centre = "Llanishen";
   const minDelay = 2000; // Minimum delay in milliseconds
   const maxDelay = 4000; // Maximum delay in milliseconds
-  const NTFY_TOPIC = "Slots"; // Set your ntfy.sh topic
+  const NTFY_TOPIC = ""; // Set your ntfy.sh topic (very easy to setup also)
 
   function formatDate(date) {
     const [year, month, day] = date.split("-");
