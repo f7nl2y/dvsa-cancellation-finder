@@ -36,23 +36,6 @@
     setTimeout(callback, delay);
   }
 
-  function showToast(message) {
-    const toast = document.createElement("div");
-    toast.className = "toast";
-    toast.textContent = message;
-    document.body.appendChild(toast);
-
-    setTimeout(() => {
-      toast.classList.add("show");
-    }, 10);
-    setTimeout(() => {
-      toast.classList.remove("show");
-      setTimeout(() => {
-        document.body.removeChild(toast);
-      }, 300);
-    }, 3000);
-  }
-
   function scrollToElement(element) {
     element.scrollIntoView({ behavior: "smooth", block: "center" });
   }
@@ -246,54 +229,6 @@
         break;
     }
   }
-
-  (function createToastContainer() {
-    const style = document.createElement("style");
-    style.innerHTML = `
-            .toast {
-                visibility: hidden;
-                min-width: 250px;
-                margin-left: -125px;
-                background-color: #333;
-                color: #fff;
-                text-align: center;
-                border-radius: 2px;
-                padding: 16px;
-                position: fixed;
-                z-index: 10000;
-                left: 50%;
-                bottom: 30px;
-                font-size: 17px;
-            }
-
-            .toast.show {
-                visibility: visible;
-                -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
-                animation: fadein 0.5s, fadeout 0.5s 2.5s;
-            }
-
-            @-webkit-keyframes fadein {
-                from {bottom: 0; opacity: 0;}
-                to {bottom: 30px; opacity: 1;}
-            }
-
-            @keyframes fadein {
-                from {bottom: 0; opacity: 0;}
-                to {bottom: 30px; opacity: 1;}
-            }
-
-            @-webkit-keyframes fadeout {
-                from {bottom: 30px; opacity: 1;}
-                to {bottom: 0; opacity: 0;}
-            }
-
-            @keyframes fadeout {
-                from {bottom: 30px; opacity: 1;}
-                to {bottom: 0; opacity: 0;}
-            }
-        `;
-    document.head.appendChild(style);
-  })();
 
   // Ensure the script runs after the page is fully loaded
   window.addEventListener("load", () => {
